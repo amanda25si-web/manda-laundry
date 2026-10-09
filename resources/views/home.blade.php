@@ -85,7 +85,7 @@
 	    <nav class="navbar navbar-expand-xl" aria-label="Offcanvas navbar large">
 	        <div class="container py-1">
 	           <a href="{{ url('/index') }}" class="navbar-brand" style="margin-right: 20px;">
-                <img src="{{ asset('assets-guest/img/logo-laundry.png') }}" height="100" alt="logo">
+                <img src="{{ asset('assets-guest/img/logo.png') }}" height="100" alt="logo">
                 </a>
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -156,7 +156,7 @@
 	                <div class="offcanvas-header" style="padding: 2rem 2rem 1.5rem 2rem;">
 	                    <h5 class="offcanvas-title m-0" id="offcanvasNavbar2Label">
 	                        <a class="navbar-brand" href="javascript:;">
-	                            <img src="./assets/logo/logo.png" height="32" alt="logo">
+	                           <img src="{{ asset('assets-guest/img/logo.png') }}" height="100" alt="logo">
 	                        </a>
 	                    </h5>
 	                    <button type="button" class="btn-close text-body-emphasis" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -788,7 +788,7 @@
 
 	            <div class="">
 	                <a href="./index.html" class="link-body-emphasis d-flex align-items-center text-decoration-none">
-	                   <img src="{{ asset('assets-guest/img/logo-laundry.png') }}" height="180" alt="logo">
+	                   <img src="{{ asset('assets-guest/img/logo.png') }}" height="180" alt="logo">
 	                </a>
 	            </div>
 
