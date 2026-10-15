@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Pelanggan;
 use App\Models\Admin;
 use App\Models\Layanan;
+
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\UserController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,7 +48,6 @@ Route::resource('admin-data', AdminController::class)
 /* Data Pelanggan */
 Route::resource('pelanggan', PelangganController::class);
 
-/* Data Petugas */
-Route::resource('petugas', PetugasController::class);
-
 Route::resource('layanan', LayananController::class);
+
+Route::resource('user', UserController::class);

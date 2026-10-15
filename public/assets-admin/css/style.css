@@ -1616,3 +1616,10 @@ html[data-theme="dark"] {
   border-top-color: var(--admin-sidebar-border);
   color: var(--admin-sidebar-text);
 }
+
+#main {
+    margin-left: 260px;
+    width: calc(100% - 240px);
+    min-width: 0;
+    min-height: 100vh;
+}

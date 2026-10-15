@@ -1,5 +1,5 @@
 
-@extends('admin.dashboard')
+@extends('layouts.admin.app')
 
 @section('content')
 <div class="container-fluid px-3 px-lg-4 py-4">
