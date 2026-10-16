@@ -61,7 +61,6 @@
             <table class="table align-middle mb-0">
                 <thead>
                     <tr>
-                        <th>No.</th>
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Password</th>
@@ -69,47 +68,41 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    @forelse ($dataUser as $user)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>••••••••</td>
+                    <tbody>
+                        @foreach ($dataUser as $user)
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->password }}</td>
 
-                            <td class="text-end">
+                                <td class="text-end">
                                 <div class="d-flex justify-content-end gap-2">
-
                                     <a href="{{ route('user.edit', $user->id) }}"
                                         class="btn btn-warning btn-sm">
-                                        <i class="bi bi-pencil-square"></i> Edit
+                                        <i class="bi bi-pencil-square"></i>
+                                        Edit
                                     </a>
 
-                                    <form action="{{ route('user.destroy', $user->id) }}"
+                                    <form
+                                        action="{{ route('user.destroy', $user->id) }}"
                                         method="POST"
-                                        onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+                                        onsubmit="return confirm('Yakin ingin menghapus data pelanggan ini?')">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-trash"></i> Hapus
+                                        <button type="submit"
+                                            class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                            Hapus
                                         </button>
                                     </form>
-
                                 </div>
                             </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="5" class="text-center py-4 text-muted">
-                                Belum ada data user.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
+                            </tr>
+                        @endforeach
+                    </tbody>
             </table>
         </div>
     </div>
-
 </div>
 @endsection
