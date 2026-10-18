@@ -13,6 +13,7 @@ class Admin extends Model
         'nama',
         'username',
         'email',
+        'password',
         'no_hp'
     ];
 }

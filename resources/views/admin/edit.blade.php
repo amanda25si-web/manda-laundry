@@ -112,6 +112,25 @@
                     @enderror
                 </div>
 
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">
+                        Password Baru
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control @error('password') is-invalid @enderror"
+                        placeholder="Kosongkan jika tidak ingin mengganti password"
+                    >
+
+                    @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <div class="mb-4">
                     <label for="no_hp" class="form-label">
                         Nomor HP

@@ -76,6 +76,23 @@
                     @enderror
                 </div>
 
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control @error('password') is-invalid @enderror"
+                        placeholder="Masukkan password admin"
+                        required
+                    >
+
+                    @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <div class="mb-4">
                     <label for="no_hp" class="form-label">Nomor HP</label>
                     <input type="text" id="no_hp" name="no_hp"

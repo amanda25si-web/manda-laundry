@@ -197,8 +197,8 @@
                                             <td>{{ $pelanggan->no_hp }}</td>
                                             <td>{{ $pelanggan->alamat }}</td>
                                             <td class="text-end">
-                                                <a class="btn btn-light btn-sm"
-                                                   href="{{ route('pelanggan.index') }}">
+                                                <a href="{{ route('pelanggan.show', $pelanggan->pelanggan_id) }}"
+                                                class="btn btn-sm btn-outline-primary">
                                                     <i class="bi bi-eye"></i> View
                                                 </a>
                                             </td>

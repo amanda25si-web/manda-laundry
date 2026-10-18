@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Admin;
@@ -22,24 +23,27 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'username' => 'required|unique:admin,username',
-            'email' => 'required|email',
-            'no_hp' => 'required',
-        ]);
+    $request->validate([
+        'nama' => 'required|string|max:100',
+        'username' => 'required|string|unique:admin,username',
+        'email' => 'required|email',
+        'no_hp' => 'required',
+        'password' => 'required|string|min:8',
+    ]);
 
-        Admin::create([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'email' => $request->email,
-            'no_hp' => $request->no_hp,
-        ]);
+    Admin::create([
+        'nama' => $request->nama,
+        'username' => $request->username,
+        'email' => $request->email,
+        'no_hp' => $request->no_hp,
+        'password' => \Illuminate\Support\Facades\Hash::make($request->password),
+    ]);
 
-        return redirect()
-            ->route('admin.index')
-            ->with('success', 'Data admin berhasil ditambahkan!');
+    return redirect()
+        ->route('admin.index')
+        ->with('success', 'Data admin berhasil ditambahkan!');
     }
+
 
     public function edit(string $id)
     {
