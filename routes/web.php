@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Pelanggan;
 use App\Models\Admin;
 use App\Models\Layanan;
+<<<<<<< HEAD
 use App\Http\Controllers\AuthController;
+=======
+
+>>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PetugasController;
@@ -18,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
+<<<<<<< HEAD
     return view('guest.home');
 });
 
@@ -34,6 +39,11 @@ Route::get('/auth', [AuthController::class, 'index'])
 Route::post('/auth', [AuthController::class, 'login'])
     ->name('guest.auth.login');
 
+=======
+    return view('home');
+});
+
+>>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
 Route::get('/admin', function () {
     $totalAdmin = Admin::count();
     $totalPelanggan = Pelanggan::count();
@@ -51,6 +61,12 @@ Route::get('/admin', function () {
     ));
 })->name('admin.dashboard');
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
 /* Data Admin */
 Route::resource('admin-data', AdminController::class)
     ->names('admin');
