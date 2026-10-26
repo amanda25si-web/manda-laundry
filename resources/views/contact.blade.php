@@ -125,7 +125,7 @@
             <div class="d-none d-xl-block col-xl-5"
                  data-aos="fade" data-aos-duration="1500">
                 <div class="h-100">
-                    <img src="{{ asset('assets-guest/img/bg/bg7.jpg') }}"
+                    <img src="{{ asset('assets-guest/img/bg/contact.jpg') }}"
                          class="w-100 h-100 rounded-4 object-fit-cover"
                          style="min-height: 650px;"
                          loading="lazy"

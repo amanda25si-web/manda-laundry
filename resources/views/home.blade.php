@@ -16,7 +16,7 @@
 <div id="home" class="overflow-hidden position-relative">
 
     <img
-        src="{{ asset('assets-guest/img/bg/bg1.jpg') }}"
+        src="{{ asset('assets-guest/img/bg/bg6.png') }}"
         class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover"
         alt="Laundry Kita"
     >
@@ -146,7 +146,7 @@
                      data-aos="fade" data-aos-duration="1000">
 
                     <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
-                        <img src="{{ asset('assets-guest/img/bg/bg2.jpg') }}"
+                        <img src="{{ asset('assets-guest/img/bg/perlengkapan-laundry.png') }}"
                              class="object-fit-cover rounded-3"
                              alt="Layanan Cuci Laundry"
                              loading="lazy">
@@ -170,7 +170,7 @@
                      data-aos-duration="1000">
 
                     <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
-                        <img src="{{ asset('assets-guest/img/bg/bg3.jpg') }}"
+                        <img src="{{ asset('assets-guest/img/bg/cuci-gosok.png') }}"
                              class="object-fit-cover rounded-3"
                              alt="Layanan Cuci Gosok Laundry"
                              loading="lazy">
@@ -194,7 +194,7 @@
                      data-aos-duration="1000">
 
                     <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
-                        <img src="{{ asset('assets-guest/img/bg/bg4.jpg') }}"
+                        <img src="{{ asset('assets-guest/img/bg/gosok.jpg') }}"
                              class="object-fit-cover rounded-3"
                              alt="Layanan Setrika Laundry"
                              loading="lazy">
@@ -273,7 +273,7 @@
                          data-aos="fade"
                          data-aos-duration="3000">
 
-                        <img src="{{ asset('assets-guest/img/bg/bg5.jpg') }}"
+                        <img src="{{ asset('assets-guest/img/bg/laundry.webp') }}"
                              class="object-fit-cover rounded-3"
                              alt="Layanan Laundry Kita"
                              loading="lazy">
@@ -282,15 +282,6 @@
             </div>
 
         </div>
-
-        <!-- Big Image -->
-        <div class="ratio ratio-16x9 mt-7 mt-sm-8 mt-xl-9">
-            <img src="{{ asset('assets-guest/img/bg/bg6.jpg') }}"
-                 class="object-fit-cover rounded-3"
-                 alt="Pakaian bersih dan rapi dari Laundry Kita"
-                 loading="lazy">
-        </div>
-
     </div>
 </div>
 <!-- End About Us -->
@@ -417,7 +408,7 @@
             <div class="d-none d-xl-block col-xl-5"
                  data-aos="fade" data-aos-duration="1500">
                 <div class="h-100">
-                    <img src="{{ asset('assets-guest/img/bg/bg7.jpg') }}"
+                    <img src="{{ asset('assets-guest/img/bg/contact.jpg') }}"
                          class="w-100 h-100 rounded-4 object-fit-cover"
                          style="min-height: 650px;"
                          loading="lazy"
