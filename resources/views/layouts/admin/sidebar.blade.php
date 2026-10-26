@@ -46,6 +46,11 @@
                     </span>
                     <span class="nav-text">Data User</span>
             </a>
+
+
+                            <a href="{{ url('/home') }}" class="btn btn-primary">
+                                 <i class="fas fa-home"></i> Home
+                            </a>
         </nav>
 
         {{-- PROFIL SIDEBAR --}}

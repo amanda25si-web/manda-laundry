@@ -1,49 +1,66 @@
+
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
+
 use App\Models\Pelanggan;
 use App\Models\Admin;
 use App\Models\Layanan;
-<<<<<<< HEAD
-use App\Http\Controllers\AuthController;
-=======
 
->>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PelangganController;
-use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\UserController;
 
-
-
+// Halaman utama
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Halaman Home
 Route::get('/home', function () {
-<<<<<<< HEAD
-    return view('guest.home');
-});
-
-// Guest - Contact Us
-Route::get('/contact', function () {
-    return view('guest.contact');
-})->name('guest.contact');
-
-// Halaman Login
-Route::get('/auth', [AuthController::class, 'index'])
-    ->name('guest.auth');
-
-// Proses Login
-Route::post('/auth', [AuthController::class, 'login'])
-    ->name('guest.auth.login');
-
-=======
     return view('home');
 });
 
->>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
+// Contact Us
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+// Login Admin
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+// Proses login Admin
+Route::post('/login', function (Request $request) {
+    $request->validate([
+        'username' => 'required|string',
+        'password' => 'required|string',
+    ]);
+
+    $admin = Admin::where('username', $request->username)->first();
+
+    if (
+        !$admin ||
+        !Hash::check($request->password, $admin->password)
+    ) {
+        return back()
+            ->withErrors([
+                'username' => 'Username atau password salah.',
+            ])
+            ->withInput($request->only('username'));
+    }
+
+    session(['admin_id' => $admin->getKey()]);
+
+    return redirect('/admin');
+});
+
+// Dashboard Admin
 Route::get('/admin', function () {
     $totalAdmin = Admin::count();
     $totalPelanggan = Pelanggan::count();
@@ -61,19 +78,15 @@ Route::get('/admin', function () {
     ));
 })->name('admin.dashboard');
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 3639d9241f0a393adfb5967d4da5a22ac7c3c71b
-/* Data Admin */
+// CRUD Admin
 Route::resource('admin-data', AdminController::class)
     ->names('admin');
 
-/* Data Pelanggan */
+// CRUD Pelanggan
 Route::resource('pelanggan', PelangganController::class);
 
+// CRUD Layanan
 Route::resource('layanan', LayananController::class);
 
+// CRUD User
 Route::resource('user', UserController::class);

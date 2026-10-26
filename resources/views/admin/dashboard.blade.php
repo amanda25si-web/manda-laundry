@@ -18,14 +18,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="heading-actions">
-                            <a href="{{ route('pelanggan.index') }}" class="btn btn-outline-secondary btn-sm">
-                                <i class="bi bi-people" aria-hidden="true"></i> Data Pelanggan
-                            </a>
-                            <a href="{{ route('layanan.index') }}" class="btn btn-primary btn-sm">
-                                <i class="bi bi-basket" aria-hidden="true"></i> Data Layanan
-                            </a>
-                        </div>
+                        
                     </div>
 
 
