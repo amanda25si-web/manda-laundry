@@ -13,4 +13,9 @@ class Layanan extends Model
         'nama_layanan',
         'harga',
     ];
+
+    public function paketLaundry()
+    {
+        return $this->hasMany(PaketLaundry::class, 'layanan_id', 'layanan_id');
+    }
 }

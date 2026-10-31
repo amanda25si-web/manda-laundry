@@ -4,16 +4,20 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Pelanggan;
 use App\Models\Admin;
 use App\Models\Layanan;
+use App\Models\PaketLaundry;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaketLaundryController;
+use App\Http\Controllers\PromoController;
 
 // Halaman utama
 Route::get('/', function () {
@@ -22,8 +26,23 @@ Route::get('/', function () {
 
 // Halaman Home
 Route::get('/home', function () {
-    return view('home');
+    $paketGuest = PaketLaundry::with('layanan')->get();
+
+    $promoGuest = DB::table('promo')
+        ->join(
+            'paket_laundry',
+            'promo.paket_id',
+            '=',
+            'paket_laundry.paket_id'
+        )
+        ->whereDate('promo.tanggal_mulai', '<=', now()->toDateString())
+        ->whereDate('promo.tanggal_berakhir', '>=', now()->toDateString())
+        ->select('promo.*', 'paket_laundry.nama_paket')
+        ->get();
+
+    return view('home', compact('paketGuest', 'promoGuest'));
 });
+
 
 // Contact Us
 Route::get('/contact', function () {
@@ -90,3 +109,9 @@ Route::resource('layanan', LayananController::class);
 
 // CRUD User
 Route::resource('user', UserController::class);
+
+Route::resource('paket-laundry', PaketLaundryController::class)
+    ->parameters(['paket-laundry' => 'id']);
+
+Route::resource('promo', PromoController::class)
+    ->parameters(['promo' => 'id']);

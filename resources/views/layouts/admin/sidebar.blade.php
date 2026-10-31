@@ -39,6 +39,26 @@
                 <span class="nav-text">Data Layanan</span>
             </a>
 
+
+            {{-- MENU PAKET LAUNDRY --}}
+            <a class="nav-link {{ request()->routeIs('paket-laundry.*') ? 'active' : '' }}"
+               href="{{ route('paket-laundry.index') }}"
+                <span class="nav-icon">
+                    <i class="bi bi-box-seam" aria-hidden="true"></i>
+                </span>
+                <span class="nav-text">Paket Laundry</span>
+            </a>
+
+            {{-- MENU PROMO --}}
+            <a class="nav-link {{ request()->routeIs('promo.*') ? 'active' : '' }}"
+              href="{{ route('promo.index') }}"
+                <span class="nav-icon">
+                    <i class="bi bi-tags" aria-hidden="true"></i>
+                </span>
+                <span class="nav-text">Data Promo</span>
+            </a>
+
+
             <a class="nav-link {{ request()->routeIs('user.*') ? 'active' : '' }}"
                 href="{{ route('user.index') }}">
                     <span class="nav-icon">

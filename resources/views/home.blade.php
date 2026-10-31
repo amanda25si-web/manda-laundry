@@ -118,7 +118,7 @@
 
 
 <!-- Services Laundry Kita -->
-<div id="services" class="overflow-hidden py-7 py-sm-8 py-xl-9 bg-body-tertiary">
+<div id="services" class="overflow-hidden py-7 py-sm-8 py-xl-9" style="background-color: #e1f2fc;">
     <div class="container">
 
         <!-- Judul Services -->
@@ -218,7 +218,6 @@
             <a href="{{ route('contact') }}"
                class="btn btn-lg btn-primary text-white icon-link icon-link-hover text-sm leading-6 fw-semibold">
                 Hubungi Kami
-                <span class="bi align-self-start" aria-hidden="true">→</span>
             </a>
         </div>
 
@@ -226,6 +225,8 @@
 </div>
 <!-- End Services -->
 
+@include('guest.paket')
+@include('guest.promo')
 
 
 <!-- About Us -->
